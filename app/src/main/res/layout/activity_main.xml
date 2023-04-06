@@ -10,11 +10,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:text="123456"
         android:gravity="end|bottom"
         android:padding="5dp"
         android:background="@color/light_grey"
         android:textSize="50sp"
+        android:id="@+id/outputText"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,6 +30,7 @@
             android:onClick="digit"
             android:layout_weight="1"
             android:text="7"
+
             />
         <Button
             android:layout_width="0dp"
@@ -151,8 +152,6 @@
         android:orientation="horizontal"
         android:layout_weight="1"
         >
-
-
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -166,7 +165,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="5dp"
             android:layout_margin="1dp"
-            android:onClick="digit"
+            android:onClick="onClear"
             android:layout_weight="1"
             android:text="CLR"
             />
