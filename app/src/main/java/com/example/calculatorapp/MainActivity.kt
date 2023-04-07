@@ -56,7 +56,46 @@ class MainActivity : AppCompatActivity() {
                     val one = (prefix + enteredArray[0]).toDouble();
                     val two = enteredArray[1].toDouble();
                     val result = one - two;
-                    outputText?.text = result.toString();
+                    outputText?.text = removeZeroAfterDot(result.toString());
+                }else if (enteredValue!!.contains("+")) {
+                    var subString = enteredValue;
+
+                    if (enteredValue.startsWith("+")) {
+                        prefix = "+";
+                        subString = enteredValue.substring(1, enteredValue.length);
+
+                    }
+                    val enteredArray = subString.split("+");
+                    val one = (prefix + enteredArray[0]).toDouble();
+                    val two = enteredArray[1].toDouble();
+                    val result = one + two;
+                    outputText?.text = removeZeroAfterDot(result.toString());
+                } else if (enteredValue!!.contains("*")) {
+                    var subString = enteredValue;
+
+                    if (enteredValue.startsWith("*")) {
+                        prefix = "*";
+                        subString = enteredValue.substring(1, enteredValue.length);
+
+                    }
+                    val enteredArray = subString.split("-");
+                    val one = (prefix + enteredArray[0]).toDouble();
+                    val two = enteredArray[1].toDouble();
+                    val result = one * two;
+                    outputText?.text = removeZeroAfterDot(result.toString());
+                } else if (enteredValue!!.contains("/")) {
+                    var subString = enteredValue;
+
+                    if (enteredValue.startsWith("/")) {
+                        prefix = "/";
+                        subString = enteredValue.substring(1, enteredValue.length);
+
+                    }
+                    val enteredArray = subString.split("/");
+                    val one = (prefix + enteredArray[0]).toDouble();
+                    val two = enteredArray[1].toDouble();
+                    val result = one / two;
+                    outputText?.text = removeZeroAfterDot(result.toString());
                 }
             }
         }catch (e:java.lang.Exception) {
@@ -64,7 +103,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
+private fun removeZeroAfterDot(value: String): String {
+    var text = value;
+    if(text.contains(".0"))
+       return text.substring(0,value.length - 2);
+    return  text;
+}
         private fun isOperatorAdded(value: String) : Boolean {
             if(value.startsWith("-")) {
                 false;
