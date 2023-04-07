@@ -54,7 +54,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="5dp"
             android:layout_margin="1dp"
-            android:onClick="digit"
+            android:onClick="onOperator"
             android:layout_weight="1"
             android:text="/"
             />
@@ -97,7 +97,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="5dp"
             android:layout_margin="1dp"
-            android:onClick="digit"
+            android:onClick="onOperator"
             android:layout_weight="1"
             android:text="*"
             />
@@ -140,7 +140,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="5dp"
             android:layout_margin="1dp"
-            android:onClick="digit"
+            android:onClick="onOperator"
             android:layout_weight="1"
             android:text="-"
             />
@@ -156,8 +156,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
+            android:onClick="onDot"
+            android:layout_weight="1"
+            android:text="."
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
             android:onClick="digit"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:text="0"
             />
         <Button
@@ -174,7 +182,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="5dp"
             android:layout_margin="1dp"
-            android:onClick="digit"
+            android:onClick="onOperator"
             android:layout_weight="1"
             android:text="+"
             />
