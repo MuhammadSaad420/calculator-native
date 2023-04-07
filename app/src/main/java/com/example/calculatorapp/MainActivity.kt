@@ -37,9 +37,35 @@ class MainActivity : AppCompatActivity() {
                 lastNumeric = false;
             }
         }
+    fun onEqual(view: View) {
+        try {
+            if (lastNumeric) {
+                print("1");
+                val enteredValue = outputText?.text;
+                var prefix = "";
+                if (enteredValue!!.contains("-")) {
+                    var subString = enteredValue;
+
+                    if (enteredValue.startsWith("-")) {
+                        prefix = "-";
+                        subString = enteredValue.substring(1, enteredValue.length);
+                        print(subString);
+
+                    }
+                    val enteredArray = subString.split("-");
+                    val one = (prefix + enteredArray[0]).toDouble();
+                    val two = enteredArray[1].toDouble();
+                    val result = one - two;
+                    outputText?.text = result.toString();
+                }
+            }
+        }catch (e:java.lang.Exception) {
+            print(e.stackTrace)
+        }
+    }
 
 
-        fun isOperatorAdded(value: String) : Boolean {
+        private fun isOperatorAdded(value: String) : Boolean {
             if(value.startsWith("-")) {
                 false;
             }
